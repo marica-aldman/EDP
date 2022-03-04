@@ -22,7 +22,7 @@ if(!isset($_POST["cancel"]) && !isset($_POST["save"]) && !isset($_POST["search"]
     );
     $searchValues = json_encode($tempItem);
     // get the search
-    $url = "http://localhost/EDPBACKcode/api.php";
+    $url = "EDPBACKcode/api.php";
 
     $ch = curl_init();
 
@@ -62,7 +62,7 @@ if(isset($_POST["cancel"])) {
     $searchValues = json_encode($tempItem);
     // get the search
     
-    $url = "http://localhost/EDPBACKcode/api.php";
+    $url = "EDPBACKcode/api.php";
 
     $ch = curl_init();
 
@@ -101,7 +101,7 @@ if(isset($_POST["search"])) {
     $searchValues = json_encode($tempItem);
     // get the search
     //$searchArray = getSearch($searchName, $searchAge, $searchHobby);
-    $url = "http://localhost/EDPBACKcode/api.php";
+    $url = "EDPBACKcode/api.php";
 
     $ch = curl_init();
 
@@ -148,6 +148,7 @@ if(isset($_POST["save"])) {
     $name = trim($_POST["name"]);
     $age = intval($_POST["age"]);
     $hobby = trim($_POST["hobby"]);
+
     if(!$_FILES['theimage']['name'] == ""){
         
         $type = pathinfo($_FILES['theimage']['name'], PATHINFO_EXTENSION);
@@ -173,7 +174,7 @@ if($save){
         'position' => $oldOrNew
     );
 
-    $url = "http://localhost/EDPBACKcode/api.php";
+    $url = "EDPBACKcode/api.php";
 
     $ch = curl_init();
 
@@ -347,6 +348,7 @@ if($save){
 
 
     </section>
+    
     <section id="view" <?php if(!$saveComplete){ echo "style='display: none;'"; } ?> class="viewmodule">
         <div>
             <div class="closeButton">
@@ -369,7 +371,7 @@ if($save){
                                     Name:
                                 </td>
                                 <td>
-                                    <input type="text" name="name" id="thename" value=<?php if($saveComplete){ echo $name; }?>>
+                                    <input type="text" name="name" id="thename" value="<?php if($saveComplete){ echo $name; }?>">
                                 </td>
                             </tr>
                             <tr>
@@ -377,7 +379,7 @@ if($save){
                                     Age:
                                 </td>
                                 <td>
-                                    <input type="text" name="age" id="theage" value=<?php if($saveComplete){ echo $age; }?>>
+                                    <input type="text" name="age" id="theage" value="<?php if($saveComplete){ echo $age; }?>">
                                 </td>
                             </tr>
                             <tr>
@@ -385,7 +387,7 @@ if($save){
                                     Hobby:
                                 </td>
                                 <td>
-                                    <input type="text" name="hobby" id="thehobby" value=<?php if($saveComplete){ echo $hobby; }?>>
+                                    <input type="text" name="hobby" id="thehobby" value="<?php if($saveComplete){ echo $hobby; }?>">
                                 </td>
                             </tr>
                             <tr>

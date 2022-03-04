@@ -72,19 +72,19 @@ function savePost($name, $age, $hobby, $base64, $position) {
 			"position" => $newItemsPosition
 		);
 		return $returnValue;
-	} else {
-		$i = 0;
+	} else {$i = 0;
 		$newItem = "";
 		$newArray = array("items" => array());
 		foreach($itemsArray["items"] as $x => $item){
 			if($i == $position){
-				if(gettype($base64) == "string" && $base64 == '""'){
+				if($base64 == '""' || $base64 == "" ){
 					$newItem = array(
 						"name" => $name,
 						"age" => $age,
 						"hobby" => $hobby,
 						"image" => $item['image']
 					);
+					 
 				} else {
 					$newItem = array(
 						"name" => $name,
@@ -98,7 +98,7 @@ function savePost($name, $age, $hobby, $base64, $position) {
 				$newArray["items"][] = $item;
 			}
 			$i++;
-		}
+		} 
 		// encode array to json and save to file
 		$newJSON = str_replace("\\","",json_encode($newArray, true));
 		
@@ -107,9 +107,10 @@ function savePost($name, $age, $hobby, $base64, $position) {
 			"item" => $newItem,
 			"position" => $position
 		);
-		return $returnValue;
+		return $returnValue; 
+		
 	}
-
+ 
 }
 
 ?>
