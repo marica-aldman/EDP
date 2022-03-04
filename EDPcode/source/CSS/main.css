@@ -1,0 +1,110 @@
+main {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.id {
+    width: 20%;
+    order: 2;
+    margin-left: 5%;
+}
+
+.id > button {
+    width: 5em;
+    margin: none;
+}
+
+.search {
+    width: 70%;
+    order: 1;
+    border: 1px solid rgb(122, 122, 122);
+    border-radius: .5em;
+    margin-bottom: 1em;
+}
+
+.search tr {
+    margin-bottom: .1em;
+}
+
+.search input {
+    width: 10em;
+    max-width: 10em;
+}
+
+.search button {
+    float:right;
+}
+
+.resultsection {
+    width: 100%;
+    order: 3;
+}
+
+.resultCard {
+    border: 1px solid rgb(122, 122, 122);
+    border-radius: .5em;
+    padding: .5em;
+    margin-bottom: 1em;
+}
+
+.resulttext {
+    width: 90%;
+}
+
+.resulttext table {
+    width: 100%;
+}
+
+.resultLabel {
+    width: 5em;
+}
+
+.resulttext button {
+    float:right;
+}
+
+.resultimg > img {
+    width: 150px;
+}
+
+.viewmodule {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 3px solid
+}
+
+.closeButton {
+    float: right;
+    width: 50px;
+}
+
+.currentImage > img {
+    float: left;
+    max-width: 150px;
+}
+
+.currentInfo {
+    clear: both;
+    width: 100%;
+}
+
+.top {
+    display: none;
+    position: fixed;
+    bottom: 2em;
+    right: .5em;
+}
+
+@media (min-width: 500px) {
+
+main {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+}
