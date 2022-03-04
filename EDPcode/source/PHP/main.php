@@ -277,6 +277,7 @@ if($save){
                         </td>
                         <td>
                             <button name="search" type="submit">Search</button>
+                            <button name="cancel" type="submit">Clear</button>
                         </td>
                     </tr>
                 </tbody>
