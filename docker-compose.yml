@@ -11,6 +11,8 @@ services:
       - 8080:80
     volumes:
       - ./EDPBACKcode:/var/www/html
+    networks:
+      - EDP
       
   EDPCODE:
     image: php:7.4-apache
@@ -19,3 +21,5 @@ services:
       - 8081:80
     volumes:
       - ./EDPCODE:/var/www/html
+    networks:
+      - EDP
